@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        AI Stock Prediction
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        AI Stock Prediction System
+    </h1>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="stock"
+            placeholder="Enter Stock Symbol"
+            required
+        >
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    {% if predicted_price %}
+
+        <div class="result">
+
+            <h2>
+                {{ stock_symbol }}
+            </h2>
+
+            <h3>
+                Predicted Price:
+                ${{ predicted_price }}
+            </h3>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
